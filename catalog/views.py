@@ -8,13 +8,13 @@ from .forms import FeedbackForm
 # Create your views here.
 class HomePageView(View):
     def get(self, request):
-        return render(request, 'home.html')
+        return render(request, 'main/home.html')
 
 
 class ContactView(View):
     def get(self, request):
         form = FeedbackForm()
-        return render(request, 'contact.html', {'form': form})
+        return render(request, 'main/contact.html', {'form': form})
 
     def post(self, request):
         form = FeedbackForm(request.POST)
@@ -23,9 +23,10 @@ class ContactView(View):
             return HttpResponse('Thank you for your feedback!')
         return render(request, 'contact.html', {'form': form})
 
-def home(request):
-    return None
+from django.shortcuts import render
 
+def home(request):
+    return render(request, 'home.html')
 
 def contact(request):
-    return None
+    return render(request, 'contact.html')
