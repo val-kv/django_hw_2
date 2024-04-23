@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'django_hw_2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangohome2',
+        'USER': 'val_k',
+        'PASSWORD': '1986',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
